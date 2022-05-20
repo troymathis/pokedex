@@ -24,7 +24,10 @@ app.get('/new', (req,res) => {
 
 // Delete
 
-
+app.delete('/info/:id', (req,res) => {
+    pokemon.splice(req.params.id, 1);
+    res.redirect('/');
+})
 
 // Update
 

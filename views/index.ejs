@@ -15,6 +15,12 @@
         <span><%= data[i].name %></span>
         <img src="<%= data[i].img %>" width="65" />
         </a>
+        <form action="/info/<%= i%>?_method=DELETE" method="POST">
+            <input type="submit" value="DELETE" />
+          </form>
+          <form action="/edit/<%=i%>">
+              <input type="submit" value="EDIT" />
+          </form> 
       </li>
       <% } %>
     </ul>
