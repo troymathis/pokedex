@@ -15,7 +15,7 @@
         <span><%= pokemon[i].name %></span>
         <img src="<%= pokemon[i].img %>" width="65" />
         </a>
-        <form action="/info/<%= i%>?_method=DELETE" method="POST">
+        <form action="/info/<%=i%>?_method=DELETE" method="POST">
             <input type="submit" value="DELETE" />
           </form>
           <form action="/edit/<%=i%>">

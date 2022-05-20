@@ -8,13 +8,13 @@
 </head>
 <body>
     <h1> Edit a Pokemon</h1>
-    <!-- <form action="/info/<%= id %>?_method=PUT" method="POST">
+    <form action="/info/<%= id %>?_method=PUT" method="POST">
         Name: <input type="text" name="name" value="<%= pokemon.name %>"><br />
         Type: <input type="text" name="type" value="<%= pokemon.type %>"><br /><br />
         Stats: <% for(const key in pokemon.stats) { %>
-            <br /> <%= key %>: <input type="text" name="<%= key %>" value="<%= pokemon.stats[key]%>"><br />
+            <br /> <%= key %>: <input type="text" name="<%=key %>" value="<%=pokemon.stats[key]%>"><br />
             <% } %>
         <input type="submit" name="" value="Submit Changes"/>
-    </form> -->
+    </form>
 </body>
 </html>

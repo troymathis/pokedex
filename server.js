@@ -13,7 +13,9 @@ app.listen(3000, () => {
 // Index
 
 app.get('/', (req,res) => {
-    res.render('index.ejs', {pokemon: pokemon});
+    res.render('index.ejs', {
+        pokemon: pokemon
+    });
 });
 
 // New
