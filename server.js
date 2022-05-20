@@ -13,7 +13,7 @@ app.listen(3000, () => {
 // Index
 
 app.get('/', (req,res) => {
-    res.render('index.ejs', {data: pokemon});
+    res.render('index.ejs', {pokemon: pokemon});
 });
 
 // New
@@ -31,11 +31,20 @@ app.delete('/info/:id', (req,res) => {
 
 // Update
 
-
+app.put('/info/:id', (req,res) => {
+    pokemon[req.params.id] = req.body;
+    res.redirect('/');
+})
 
 // Create
 
 
+
+// Edit
+
+app.get('/edit/:id', (req,res) => {
+    res.render('edit.ejs', {pokemon: pokemon[req.params.id], id: req.params.id});
+});
 
 // Show
 

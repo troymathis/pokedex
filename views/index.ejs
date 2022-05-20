@@ -9,11 +9,11 @@
   <body>
     <h1>PokeDex</h1>
     <ul>
-      <% for (let i=0;i < data.length; i++) { %>
+      <% for (let i=0;i < pokemon.length; i++) { %>
       <li>
           <a href="/info/<%=i%>">
-        <span><%= data[i].name %></span>
-        <img src="<%= data[i].img %>" width="65" />
+        <span><%= pokemon[i].name %></span>
+        <img src="<%= pokemon[i].img %>" width="65" />
         </a>
         <form action="/info/<%= i%>?_method=DELETE" method="POST">
             <input type="submit" value="DELETE" />
@@ -24,6 +24,7 @@
       </li>
       <% } %>
     </ul>
+    <% console.log(pokemon[0]) %>
   </body>
   <style>
     li {

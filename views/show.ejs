@@ -9,6 +9,9 @@
   <body>
     <h1><%= pokemon.name %></h1>
     <h2>Pokemon ID: <%= pokemon.id %></h2>
+    <h2>Type: </h2><% for(let i=0; i < pokemon.type.length;i++) { %>
+        <h4><%= pokemon.type[i] %></h4>
+        <% } %>
     <div>
       <h3>Stats:</h3>
       <p>
@@ -26,6 +29,9 @@
             <li><%= pokemon.moves.level[i].name %> </li>
         <% } %>
         </ul>
+    </div>
+    <div>
+        <img src="<%= pokemon.img %>"/>
     </div>
     <a href="/">Back to Pokedex</a>
   </body>
