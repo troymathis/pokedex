@@ -4,15 +4,21 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <title>PokeDex</title>
   </head>
   <body>
-    <h1>PokeDex</h1>
+    <header>
+    <h1>PokeDex</h1> <h2>Click on a Pokemon for expanded info!</h2>
+    <a id="create" href="/new">Create a New Pokemon</a>
+    </header>
     <ul>
       <% for (let i=0;i < pokemon.length; i++) { %>
       <li>
           <a href="/info/<%=i%>">
-        <span><%= pokemon[i].name %></span>
+        <span id="names"><%= pokemon[i].name %></span>
         <img src="<%= pokemon[i].img %>" width="65" />
         </a>
         <form action="/info/<%=i%>?_method=DELETE" method="POST">
@@ -24,9 +30,14 @@
       </li>
       <% } %>
     </ul>
-    <% console.log(pokemon[0]) %>
   </body>
   <style>
+    a {
+      text-decoration: none;
+    }
+    body {
+      background-color: #5c1e1e;
+    }
     li {
       padding: 10px;
       border: 5px;
@@ -34,20 +45,50 @@
       display: inline-block;
       max-width: 100px;
       min-height: 100px;
+      background-color: white;
+      border-radius: 5px;
+
     }
+
+    li:hover {
+      opacity: 85%;
+    }
+
     ul {
-      border: 5px;
+      border: 2px;
       border-style: solid;
       padding: 5px;
+      border-radius: 10px;
     }
-    span {
-      border: 5px;
-      border-style: solid;
-      border-color: black;
-    }
+
 
     img {
         padding: 10px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      font-family: 'Press Start 2P', cursive;
+      color: white;
+    }
+
+    #create {
+      text-decoration: none;
+      padding: 30px;
+      border: 10px;
+      border-style: solid;
+      border-color: black;
+      background-color: white;
+      border-radius: 5px;
+    }
+    #create:hover {
+      opacity: 50%;
+    }
+
+    input {
+      border-radius: 10px;
+      padding: 10px;
     }
   </style>
 </html>

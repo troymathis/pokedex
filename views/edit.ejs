@@ -1,20 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
     <title>EDIT a Pokemon</title>
-</head>
-<body>
-    <h1> Edit a Pokemon</h1>
+  </head>
+  <body>
+    <h1>Edit a Pokemon</h1>
     <form action="/info/<%= id %>?_method=PUT" method="POST">
-        Name: <input type="text" name="name" value="<%= pokemon.name %>"><br />
-        Type: <input type="text" name="type" value="<%= pokemon.type %>"><br /><br />
-        Stats: <% for(const key in pokemon.stats) { %>
-            <br /> <%= key %>: <input type="text" name="<%=key %>" value="<%=pokemon.stats[key]%>"><br />
-            <% } %>
-        <input type="submit" name="" value="Submit Changes"/>
+      Name: <input type="text" name="name" value="<%= pokemon.name %>" /><br />
+      Type:
+      <input type="text" name="type" value="<%= pokemon.type %>" /><br /><br />
+      Stats: <% for(const key in pokemon.stats) { %>
+      <br />
+      <%= key %>:
+      <input
+        type="text"
+        name="<%=key %>"
+        value="<%= pokemon.stats[key]%>"
+      /><br />
+      <% } %>
+      <br />Image:
+      <input type="text" name="img" value="<%= pokemon.img %>" /><br /><br />
+      Moves:<br />
+      <% for (let i=0;i < pokemon.moves.level.length;i++) { %> <br /><input
+        type="text"
+        name="nest"
+        value="<%= pokemon.moves.level[i].name %>"
+      /><br />
+      <% } %>
+      <input type="submit" name="" value="Submit Changes" />
     </form>
-</body>
+  </body>
+  <style>
+      body {
+        font-family: 'Press Start 2P', cursive;
+        background-color: #5c1e1e;
+        color: white;
+      }
+  </style>
 </html>

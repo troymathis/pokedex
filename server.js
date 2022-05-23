@@ -34,12 +34,30 @@ app.delete('/info/:id', (req,res) => {
 // Update
 
 app.put('/info/:id', (req,res) => {
+    req.body.stats = {'hp': req.body.hp,'attack':req.body.attack,'defense':req.body.defense,'spattack':req.body.spattack,'spdefense':req.body.defense,'speed':req.body.speed};
+    req.body.level = []
+    req.body.type = req.body.type.split(',');
+    for (let i=0;i < req.body.nest.length; i++) {
+        req.body.level.push({name: req.body.nest[i]})
+    }
+    req.body.moves = {level : req.body.level};
     pokemon[req.params.id] = req.body;
+    console.log(pokemon[0])
     res.redirect('/');
-})
+});
 
 // Create
-
+app.post("/new", (req,res) => {
+    req.body.stats = {'hp': req.body.hp,'attack':req.body.attack,'defense':req.body.defense,'spattack':req.body.spattack,'spdefense':req.body.defense,'speed':req.body.speed};
+    req.body.level = []
+    req.body.type = req.body.type.split(',');
+    for (let i=0;i < req.body.nest.length; i++) {
+        req.body.level.push({name: req.body.nest[i]})
+    }
+    req.body.moves = {level : req.body.level};
+    pokemon.unshift(req.body);
+    res.redirect("/");
+})
 
 
 // Edit

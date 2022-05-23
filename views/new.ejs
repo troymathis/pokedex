@@ -5,12 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add a New Pokemon!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
     <h1> Add a New Pokemon!</h1>
-    <form>
-        Name: <input type="'text" name="name" />
-        
+    <form action="/new" method="POST">
+        Name: <input type="text" name="name"><br />
+        Type: <input type="text" name="type"><br /><br />
+        Stats: <br />HP: <input type="text" name="hp"><br />
+        attack: <input type="text" name="attack"><br />
+        defense: <input type="text" name="defense"><br />
+        spattack: <input type="text" name="spattack"><br />
+        spdefense: <input type="text" name="spdefense"><br />
+        speed: <input type="text" name="speed"><br />
+        <br />Image: <input type="text" name="img"><br /><br />
+        Moves:<br /> <% for (let i=0;i < 5;i++) { %>
+            <br /><input type='text' name= 'nest' ><br />
+            <% } %>
+        <input type="submit" name="" value="Create Pokemon"/>
     </form>
 </body>
+<style>
+    body {
+        font-family: 'Press Start 2P', cursive;
+        background-color: #5c1e1e;
+        color: white;
+    }
+</style>
 </html>
